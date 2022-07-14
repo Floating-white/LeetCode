@@ -12,7 +12,6 @@ public class FindContentChildren {
             while (j < s.length && g[i] > s[j]) j++;
             if (j < s.length) count++;
         }
-
         return count;
     }
 }
