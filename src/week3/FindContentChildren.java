@@ -1,7 +1,6 @@
 package week3;
 
 import java.util.Arrays;
-import java.util.spi.CurrencyNameProvider;
 
 public class FindContentChildren {
     public int findContentChildren(int[] g, int[] s) {
