@@ -1,7 +1,9 @@
 package Tree;
 
 
+import java.util.Iterator;
 import java.util.LinkedList;
+import java.util.List;
 import java.util.Queue;
 
 public class MaxDepth {
@@ -71,6 +73,36 @@ public class MaxDepth {
             }
         }
         return false;
+    }
+
+    /*
+    *   展平二叉树
+    * */
+
+    public TreeNode increasingBST(TreeNode root) {
+
+        LinkedList<Integer> list = new LinkedList<>();
+
+        inorder(root, list);
+
+        TreeNode node = new TreeNode();
+        TreeNode res = node;
+
+        Iterator<Integer> iterator = list.iterator();
+
+        while (iterator.hasNext()) {
+            node.right = new TreeNode(iterator.next());
+            node = node.right;
+        }
+
+        return res.right;
+    }
+
+    public void inorder(TreeNode root, List<Integer> list) {
+        if (root == null) return;
+        inorder(root.left, list);
+        list.add(root.val);
+        inorder(root.right, list);
     }
 }
 
