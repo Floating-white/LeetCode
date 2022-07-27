@@ -104,6 +104,19 @@ public class MaxDepth {
         list.add(root.val);
         inorder(root.right, list);
     }
+
+    /*
+    *   二叉搜索树中的搜索
+    * */
+    public TreeNode searchBST(TreeNode root, int val) {
+        while (root != null) {
+            if (root.val == val) return root;
+            else if (root.val > val) root = root.left;
+            else root = root.right;
+        }
+
+        return null;
+    }
 }
 
 
